@@ -41,8 +41,7 @@ def describe_db_instances():
             else:
                 print("### {} RDS DB Instances ###" .format(region))
                 for r in response['DBInstances']:
-                    for i in r['Instances']:
-                        pp.pprint(i)
+                    pp.pprint(i)
         print("\n")
 
     except botocore.exceptions.ClientError as e:
