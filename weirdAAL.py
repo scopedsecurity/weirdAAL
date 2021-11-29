@@ -31,7 +31,8 @@ if 'AWS_SHARED_CREDENTIALS_FILE' not in os.environ:
 # If you want to use a transparent + supports SSL proxy you can put it here
 # os.environ['HTTPS_PROXY'] = 'https://127.0.0.1:3128'
 
-sys.path.append("modules")
+sys.path.append(os.path.dirname(__file__))
+sys.path.append(os.path.join(os.path.dirname(__file__), "modules"))
 for module in all_modules:
     exec("from %s import *" % module)
 
